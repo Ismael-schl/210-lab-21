@@ -16,7 +16,15 @@ class Goat {
         string names[15] = {"Billy", "Nibbles", "Clover", "Gruff", "Biscuit", "Pepper", "Hazel", "Mochi", "Thistle", "Ziggy", "Daisy", "Brutus", "Maple", "Waffles", "Juniper"};
         string colors[15] = {"White", "Black", "Brown", "Tan", "Gray", "Cream", "Chestnut", "Red", "Gold", "Buckskin", "Charcoal", "Fawn", "Silver", "Copper", "Ivory"};
     public:
-    
+        int getAge() {
+            return age;
+        }
+        string getName() {
+            return name;
+        }
+        string getColor() {
+            return color;
+        }
         Goat() {
             age = rand() % (20-1 +1) + 1;
             name = names[rand() % 15];
@@ -78,7 +86,7 @@ public:
             return;
         }
         while (current) {
-            cout << current->data << " ";
+            cout << current->data.getName() << " (" << current->data.getColor() << ", " << current->data.getAge() << ")" << endl;
             current = current->next;
         }
         cout << endl;
@@ -86,9 +94,13 @@ public:
 
     void print_reverse() {
         Node* current = tail;
-        if (!current) return;
+        if (!current) {
+            cout << "List is empty" << endl;
+            return;
+        }
+        cout << "Backward"
         while (current) {
-            cout << current->data << " ";
+            cout << current->data.getName() << " (" << current->data.getColor() << ", " << current->data.getAge() << ")" << endl;
             current = current->prev;
         }
         cout << endl;
