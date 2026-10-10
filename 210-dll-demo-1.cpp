@@ -12,6 +12,16 @@ class Goat {
         string names[15] = {"Billy", "Nibbles", "Clover", "Gruff", "Biscuit", "Pepper", "Hazel", "Mochi", "Thistle", "Ziggy", "Daisy", "Brutus", "Maple", "Waffles", "Juniper"};
         string colors[15] = {"White", "Black", "Brown", "Tan", "Gray", "Cream", "Chestnut", "Red", "Gold", "Buckskin", "Charcoal", "Fawn", "Silver", "Copper", "Ivory"};
     public:
+        Goat() {
+            age = rand() % (20-1 +1) / 1;
+            name = names[rand() % 15];
+            color = colors[rand() % 15];
+        }
+        Goat(int a, string n, string c) {
+            age = a;
+            name = n;
+            color = c;
+        }
 
     };
 
