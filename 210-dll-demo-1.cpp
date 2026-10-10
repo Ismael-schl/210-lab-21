@@ -1,16 +1,28 @@
+//Lab 21 | COMSC 210 | Ismael Hadi
 #include <iostream>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
+class Goat {
+    private:
+        int age;
+        string name;
+        string color;
+        string names[15] = {"Billy", "Nibbles", "Clover", "Gruff", "Biscuit", "Pepper", "Hazel", "Mochi", "Thistle", "Ziggy", "Daisy", "Brutus", "Maple", "Waffles", "Juniper"};
+        string colors[15] = {"White", "Black", "Brown", "Tan", "Gray", "Cream", "Chestnut", "Red", "Gold", "Buckskin", "Charcoal", "Fawn", "Silver", "Copper", "Ivory"};
+    public:
+
+    };
+
 class DoublyLinkedList {
 private:
     struct Node {
-        int data;
+        Goat data;
         Node* prev;
         Node* next;
-        Node(int val, Node* p = nullptr, Node* n = nullptr) {
-            data = val; 
+        Node(Goat g, Node* p = nullptr, Node* n = nullptr) {
+            data = g; 
             prev = p;
             next = n;
         }
@@ -23,8 +35,8 @@ public:
     // constructor
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
-    void push_back(int value) {
-        Node* newNode = new Node(value);
+    void push_back(Goat g) {
+        Node* newNode = new Node(g);
         if (!tail)  // if there's no tail, the list is empty
             head = tail = newNode;
         else {
@@ -34,8 +46,8 @@ public:
         }
     }
 
-    void push_front(int value) {
-        Node* newNode = new Node(value);
+    void push_front(Goat g) {
+        Node* newNode = new Node(g);
         if (!head)  // if there's no head, the list is empty
             head = tail = newNode;
         else {
